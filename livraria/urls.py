@@ -9,6 +9,7 @@ router = routers.DefaultRouter()
 router.register(r'categoria', views.CategoriaViewSet)
 router.register(r'editora', views.EditoraViewSet)
 router.register(r'autor', views.AutorViewSet)
+router.register(r'livro', views.LivroViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
