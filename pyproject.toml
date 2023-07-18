@@ -12,6 +12,8 @@ whitenoise = "^6.5.0"
 djangorestframework = "^3.14.0"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^6.0.0"
+black = "^23.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
