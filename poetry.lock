@@ -30,6 +30,18 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "djangorestframework"
+version = "3.14.0"
+description = "Web APIs for Django, made easy."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+django = ">=3.0"
+pytz = "*"
+
+[[package]]
 name = "gunicorn"
 version = "21.0.1"
 description = "WSGI HTTP Server for UNIX"
@@ -53,6 +65,14 @@ description = "Core utilities for Python packages"
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "pytz"
+version = "2023.3"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "sqlparse"
@@ -97,13 +117,15 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "65938ec4de6dd30261427ae1f6442f8abe0361392132c67c4038280643b24bdb"
+content-hash = "72c508e76b2d94e083d4eda9c455aac448645378ded0bc28e57b273422a63055"
 
 [metadata.files]
 asgiref = []
 django = []
+djangorestframework = []
 gunicorn = []
 packaging = []
+pytz = []
 sqlparse = []
 typing-extensions = []
 tzdata = []
