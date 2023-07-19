@@ -40,7 +40,7 @@ class ItensCompraSerializer(ModelSerializer):
 
 class CriarEditarItensCompraSerializer(ModelSerializer):
     class Meta:
-        model = Compra
+        model = ItensCompra
         fields = ('livro', 'quantidade')
 
 class CriarEditarCompraSerializer(ModelSerializer):
@@ -57,6 +57,15 @@ class CriarEditarCompraSerializer(ModelSerializer):
             ItensCompra.objects.create(compra=compra, **item)
         compra.save()
         return compra
+
+    def update(self, instance, validated_data):
+        itens = validated_data.pop('itens')
+        if itens:
+            instance.itens.all().delete()
+            for item in itens:
+                ItensCompra.objects.create(compra=instance, **item)
+            instance.save()
+        return instance
 
 class CompraSerializer(ModelSerializer):
     usuario = CharField(source='usuario.email')
